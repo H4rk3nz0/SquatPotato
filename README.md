@@ -1,5 +1,14 @@
 # SquatPotato
+
 A SeImpersonate potato primitive that exploits squatting the IAiddService endpoint.
+
+Usage:
+
+```
+SquatPotato.exe "cmd.exe /c whoami > C:\Windows\System32\proof.txt 2>&1"
+
+SquatPotato.exe -timeout 900 "powershell -c \"...\""
+```
 
 ---
 
