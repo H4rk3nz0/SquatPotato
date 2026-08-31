@@ -1,0 +1,21 @@
+name: Build SquatPotato
+
+on: [push, workflow_dispatch]
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: csc
+        shell: cmd
+        run: >
+          "%WINDIR%\Microsoft.NET\Framework64\v4.0.30319\csc.exe"
+          /nologo /target:exe /platform:x64 /unsafe
+          /out:SquatPotato.exe SquatPotato.cs
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: SquatPotato
+          path: SquatPotato.exe
